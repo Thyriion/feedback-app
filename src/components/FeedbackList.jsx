@@ -9,7 +9,8 @@ function FeedbackList() {
     return <p>No Feedback Yet</p>;
   }
 
-  /*TODO */
+  /*TODO: Animation hinzufügen */
+  /*TODO: framer-motion updaten*/
   // return (
   //   <div className="feedback-list">
   //     <AnimatePresence>
