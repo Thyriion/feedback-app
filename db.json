@@ -3,22 +3,17 @@
     {
       "id": 1,
       "rating": 10,
-      "text": "This is feedback item 1 coming from the backend"
+      "text": "Absolut wundervoll!"
     },
     {
       "id": 2,
       "rating": 8,
-      "text": "This is feedback item 2 coming from the backend"
+      "text": "Eigentlich keine Beschwerden"
     },
     {
-      "id": 3,
-      "rating": 8,
-      "text": "This is feedback item 3 coming from the backend"
-    },
-    {
-      "text": "This is a updated test",
-      "rating": 9,
-      "id": 4
+      "text": "Super Service, aber auf der Rückfahrt war Stau",
+      "rating": 2,
+      "id": 3
     }
   ]
 }

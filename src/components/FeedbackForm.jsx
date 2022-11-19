@@ -53,7 +53,12 @@ function FeedbackForm() {
 
   return (
     <Card>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+          setBtnDisabled(true);
+        }}
+      >
         <h2>Wie würden Sie uns bewerten?</h2>
         <RatingSelect select={(rating) => setRating(rating)} />
         <div className="input-group">
