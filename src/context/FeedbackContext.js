@@ -15,23 +15,17 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   const fetchFeedback = async () => {
-    // const response = await fetch("/feedback?_sort=id&_order=desc", {
-    //   method: "GET",
-    //   headers: { "Content-Type": "application/json" },
-    // });
-    //
-    // const data = await response.json();
-    //
-    const response = await fetch("https://test-api-azure.vercel.app/feedback");
-    console.log(response);
+    const response = await fetch(
+      "https://test-api-azure.vercel.app/feedback?_sort=id&_order=desc"
+    );
     const data = await response.json();
-    console.log(data);
+
     setFeedback(data);
     setIsLoading(false);
   };
 
   const addFeedback = async (newFeedback) => {
-    const response = await fetch("/feedback", {
+    const response = await fetch("https://test-api-azure.vercel.app/feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newFeedback),
@@ -44,7 +38,9 @@ export const FeedbackProvider = ({ children }) => {
 
   const deleteFeedback = async (id) => {
     if (window.confirm("Sicher, dass Sie löschen möchten?")) {
-      await fetch(`/feedback/${id}`, { method: "DELETE" });
+      await fetch(`https://test-api-azure.vercel.app/feedback/${id}`, {
+        method: "DELETE",
+      });
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
@@ -54,11 +50,14 @@ export const FeedbackProvider = ({ children }) => {
   };
 
   const updateFeedback = async (id, updItem) => {
-    const response = await fetch(`/feedback/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updItem),
-    });
+    const response = await fetch(
+      `https://test-api-azure.vercel.app/feedback/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updItem),
+      }
+    );
 
     const data = await response.json();
 
