@@ -15,15 +15,19 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   const fetchFeedback = async () => {
-    const response = await fetch("/feedback?_sort=id&_order=desc", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    console.log(await response.text());
+    // const response = await fetch("/feedback?_sort=id&_order=desc", {
+    //   method: "GET",
+    //   headers: { "Content-Type": "application/json" },
+    // });
+    //
     // const data = await response.json();
     //
-    // setFeedback(data);
-    // setIsLoading(false);
+    const response = await fetch("https://test-api-azure.vercel.app/feedback");
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    setFeedback(data);
+    setIsLoading(false);
   };
 
   const addFeedback = async (newFeedback) => {
