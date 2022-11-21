@@ -19,7 +19,7 @@ export const FeedbackProvider = ({ children }) => {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(await response.json());
+    console.log(await response.text());
     // const data = await response.json();
     //
     // setFeedback(data);
